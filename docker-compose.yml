@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+
+  api:
+    build: .
+    container_name: multi-agent-api
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - .env
+
+    depends_on:
+      - postgres
+
+    restart: always
+
+  postgres:
+    image: postgres:16
+
+    container_name: multi-agent-postgres
+
+    environment:
+      POSTGRES_USER: ai_user
+      POSTGRES_PASSWORD: StrongPassword123
+      POSTGRES_DB: agents_db
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    restart: always
+
+volumes:
+  postgres_data:
