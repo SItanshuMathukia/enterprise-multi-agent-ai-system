@@ -261,12 +261,6 @@ Software Engineer with 4+ years of experience designing scalable backend systems
 
 ---
 
-# License
-
-This project is licensed under the MIT License.
-
----
-
 # Citation
 
 If you use this project in your research, please cite it as:
